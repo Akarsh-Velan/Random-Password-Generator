@@ -6,9 +6,8 @@ lg = int(input("Enter the required length of the generated password:  "))
 ch1 = input("Do you want to include numbers? (y/n)")
 l=[]
 alp='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-lgth = len(l)
-
 choices_y = ('YES','YE','Y','yes','ye','y','Yes')
+
 def options(l):
     ch2 = input('Do you want to edit or remove a character in this password? (y/n)')
     if ch2 in choices_y:
@@ -27,7 +26,6 @@ def options(l):
                 start(l)
             else:
                 print()
-
                 ch5 = input('Do you wanna go back to the previous options? (y/n)')
                 print()
                 if ch5 in choices_y:
@@ -94,7 +92,6 @@ def start(l):
             else:
                 print()
                 options(l)
-
     else:
         while i != lg:
             tmp3 = random.choice(alp)
@@ -114,5 +111,4 @@ def start(l):
             else:
                 print('---------------------------------------------------------------------------------------------------------------------------------')
                 exit()
-
 start(l)
