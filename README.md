@@ -1,4 +1,6 @@
 # Random-Password-Generator
+ ∙ Indefinitely create new random passwords.
+
  ∙ Length limit of password is user's input.
  
  ∙ Password generated as combination of letters(including capital) & numbers.
