@@ -3,4 +3,4 @@
  
  ∙ Password generated as combination of letters(including capital) & numbers.
  
- ∙ Characters in the password can be removed entiresly or replaced with a user prefered character.
+ ∙ Characters in the password can be removed entirely or replaced with a user prefered character.
