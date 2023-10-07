@@ -1,5 +1,4 @@
 import random
-x = 1
 choices_y = ('yes','ye','y','s')
 def main():
 
