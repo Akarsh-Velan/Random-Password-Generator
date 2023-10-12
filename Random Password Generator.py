@@ -17,7 +17,7 @@ def main():
         alp='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
-        def options(l,x):
+        def options(l):
             ch2 = input('Do you want to edit or remove a character in this password? (y/n) ').lower()
             if ch2 in choices_y:
                 ch3 = input('Do you want to remove a character? (y/n) ').lower()
@@ -48,7 +48,7 @@ def main():
                         ch5 = input('Do you wanna go back to the previous options? (y/n) ').lower()
                         print()
                         if ch5 in choices_y:
-                            options(l,x)
+                            options(l)
                         else:
                             print('---------------------------------------------------------------------------------------------------------------------------------')
                             main()
@@ -78,7 +78,7 @@ def main():
                         ch7 = input('Do you wanna go back to the previous options? (y/n) ').lower()
                         print()
                         if ch7 in choices_y:
-                            options(l,x)
+                            options(l)
                         else:
                             print('---------------------------------------------------------------------------------------------------------------------------------')
                             main()
@@ -86,13 +86,13 @@ def main():
                 print('---------------------------------------------------------------------------------------------------------------------------------')
                 main()
 
-        def generate(l,x):
+        def generate(l):
             print()
             print('Generated Password: ',"".join(l))
             print()
             c = input('Do you want to edit or remove a charcter in the generated password? (y/n) ')
             if c in choices_y:
-                options(l,x)
+                options(l)
             sv = input('Do you want to save your password: (y/n) ')
             if sv in choices_y:
                 save = open('svdpswd.txt', 'a+')
@@ -107,9 +107,9 @@ def main():
                 main()
             else:
                 print()
-                options(l,x)
+                options(l)
 
-        def start(l,x):
+        def start(l):
             l.clear()
             i = 0
             if ch1 in choices_y:
@@ -121,7 +121,7 @@ def main():
                     if lg == len(l)+1:
                         tmp3=str(random.randint(0,9))
                         l.append(tmp3)
-                        generate(l,x)
+                        generate(l)
                     i=i+2
                 if i == lg:
                     print()
@@ -129,7 +129,7 @@ def main():
                     print()
                     d = input('Do you want to edit or remove a charcter in the generated password? (y/n) ')
                     if d in choices_y:
-                        options(l, x)
+                        options(l)
                     sv = input('Do you want to save your password: (y/n) ')
                     if sv in choices_y:
                         save = open('svdpswd.txt', 'a+')
@@ -144,14 +144,14 @@ def main():
                         main()
                     else:
                         print()
-                        options(l, x)
+                        options(l)
 
                     ch9 = input('Do you want to create a new password: (y/n) ').lower()
                     if ch9 in choices_y:
                         main()
                     else:
                         print()
-                        options(l,x)
+                        options(l)
             else:
                 while i != lg:
                     tmp3 = random.choice(alp)
@@ -176,11 +176,11 @@ def main():
                     ch8 = input('Do you wanna go back to the previous options? (y/n) ').lower()
                     print()
                     if ch8 in choices_y:
-                        options(l,x)
+                        options(l)
                     else:
                         print('---------------------------------------------------------------------------------------------------------------------------------')
                         main()
-        start(l,x)
+        start(l)
 
     elif ch0 == 2:
         with open('svdpswd.txt') as fl:
@@ -208,4 +208,3 @@ def main():
         main()
 
 main()
-
