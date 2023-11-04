@@ -1,7 +1,12 @@
 import random
 choices_y = ('yes', 'ye', 'y', 's')
+def savefile(l):
+    save = open('svdpswd.txt', 'a+')
+    xa = '• '
+    save.write(xa);save.write(''.join(l));save.write('\n');save.close()
+    return
 def main():
-    print('--------------' * 9); print("Random Password Generator"); print()
+    print('-----' * 25); print("Random Password Generator"); print()
     print('1. Generate Random Password');print('2. View Saved Passwords');print('3. Exit');print()
     ch0 = int(input('Enter your choice? (1/2/3) '))
     if ch0 == 1:
@@ -20,12 +25,7 @@ def main():
                     print('Generated Password: ', "".join(l));print()
                     sv = input('Do you want to save your password: (y/n) ')
                     if sv in choices_y:
-                        save = open('svdpswd.txt', 'a+')
-                        xa = '• '
-                        save.write(xa)
-                        save.write(''.join(l))
-                        save.write('\n')
-                        save.close()
+                        savefile(l)
                     print()
                     ch11 = input('Do you want to create a new password (y/n): ').lower()
                     if ch11 in choices_y:
@@ -37,7 +37,7 @@ def main():
                         if ch5 in choices_y:
                             options(l)
                         else:
-                            print('--------------' * 9);main()
+                            print('-----' * 25);main()
                 else:
                     ch4 = int(input('Enter character number you want to edit: (Ex. 1,4,5) '))
                     ch6 = input('Enter the character you want to replace the original character with: ')
@@ -47,12 +47,7 @@ def main():
                     print('Generated Password: ', "".join(l));print()
                     sv = input('Do you want to save your password: (y/n) ')
                     if sv in choices_y:
-                        save = open('svdpswd.txt', 'a+')
-                        xa = '• '
-                        save.write(xa)
-                        save.write(''.join(l))
-                        save.write('\n')
-                        save.close()
+                        savefile(l)
                     print()
                     ch12 = input('Do you want to create a new password: (y/n) ').lower()
                     if ch12 in choices_y:
@@ -64,9 +59,9 @@ def main():
                         if ch7 in choices_y:
                             options(l)
                         else:
-                            print('--------------' * 9);main()
+                            print('-----' * 25);main()
             else:
-                print('--------------' * 9);main()
+                print('-----' * 25);main()
         def generate(l):
             print()
             print('Generated Password: ', "".join(l));print()
@@ -75,12 +70,7 @@ def main():
                 options(l)
             sv = input('Do you want to save your password: (y/n) ')
             if sv in choices_y:
-                save = open('svdpswd.txt', 'a+')
-                xa = '• '
-                save.write(xa)
-                save.write(''.join(l))
-                save.write('\n')
-                save.close()
+                savefile(l)
             print()
             ch13 = input('Do you want to create a new password: (y/n) ').lower()
             if ch13 in choices_y:
@@ -109,12 +99,7 @@ def main():
                         options(l)
                     sv = input('Do you want to save your password: (y/n) ')
                     if sv in choices_y:
-                        save = open('svdpswd.txt', 'a+')
-                        xa = '• '
-                        save.write(xa)
-                        save.write(''.join(l))
-                        save.write('\n')
-                        save.close()
+                        savefile(l)
                     print()
                     ch14 = input('Do you want to create a new password: (y/n) ').lower()
                     if ch14 in choices_y:
@@ -135,12 +120,7 @@ def main():
                 print("Generated Password: ", "".join(l));print()
                 sv = input('Do you want to save your password: (y/n) ')
                 if sv in choices_y:
-                    save = open('svdpswd.txt', 'a+')
-                    xa = '• '
-                    save.write(xa)
-                    save.write(''.join(l))
-                    save.write('\n')
-                    save.close()
+                    savefile(l)
                 print()
                 ch10 = input('Do you want to create a new password: (y/n) ').lower()
                 if ch10 in choices_y:
@@ -151,7 +131,7 @@ def main():
                     if ch8 in choices_y:
                         options(l)
                     else:
-                        print('--------------' * 9);main()
+                        print('-----' * 25);main()
         start(l)
     elif ch0 == 2:
         with open('svdpswd.txt') as fl:
@@ -161,8 +141,7 @@ def main():
         print()
         if t in choices_y:
             f = open('svdpswd.txt', 'a+')
-            f.truncate(0)
-            f.close()
+            f.truncate(0);f.close()
             print('All saved passwords cleared.');print()
         s = input('Do you wanna return to the main menu? (y/n)')
         if s in choices_y:
@@ -170,7 +149,7 @@ def main():
         else:
             exit()
     elif ch0 == 3:
-        print('--------------' * 9);exit()
+        print('-----' * 25);exit()
     else:
         print('Invalid Choice. Please try again.');main()
 main()
